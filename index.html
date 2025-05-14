@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Karier</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #d0e6f5, #f7e3f0);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    @media (min-width: 600px) {
+      header {
+        font-size: 2.5rem;
+      }
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+    }
+
+    @media (min-width: 600px) {
+      .cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 2rem;
+      }
+    }
+
+    .card {
+      background-color: #ffffff;
+      border: 2px dashed #ffd1dc;
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 600px) {
+      .card img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+      color: #8e44ad;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .more-info {
+      display: none;
+      font-size: 1rem; /* Slightly bigger font */
+      color: #666;
+      margin-top: 0.5rem;
+      padding: 1rem; /* Add some padding to make it more spacious */
+      max-height: 200px; /* Set a max-height if you want to limit the length */
+      overflow-y: auto; /* Allow scrolling if the content gets too long */
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .card button {
+      background-color: #ff85a2;
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .card button:hover {
+      background-color: #ff5c8a;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #6b7280;
+      margin-top: auto;
+      font-size: 0.9rem;
+    }
+  </style>
+  <script>
+    function toggleInfo(button) {
+      const info = button.nextElementSibling;
+      if (info.style.display === 'block') {
+        info.style.display = 'none';
+        button.textContent = 'Pelajari Lebih Lanjut';
+      } else {
+        info.style.display = 'block';
+        button.textContent = 'Sembunyikan';
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>Temukan Karier Impianmu!</header>
+
+  <div class="cards-container">
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/100/2c3e50/doctor-male.png" alt="Dokter">
+      <h3>Dokter</h3>
+      <p>Merawat dan menyelamatkan nyawa manusia di bidang kesehatan.</p>
+      <button onclick="toggleInfo(this)">Pelajari Lebih Lanjut</button>
+      <div class="more-info">
+        Dokter adalah profesional medis yang memiliki keahlian dalam mendiagnosis, merawat, dan menyembuhkan penyakit. Mereka bekerja di rumah sakit, klinik, atau praktik pribadi. Tugas utama mereka meliputi pemeriksaan fisik, meresepkan obat, dan memberikan edukasi kepada pasien tentang cara menjaga kesehatan. Ada berbagai spesialisasi, seperti dokter umum, dokter bedah, dokter gigi, dan dokter anak. Sebagai seorang dokter, Anda harus selalu mengikuti perkembangan ilmu kedokteran dan memiliki rasa empati yang tinggi terhadap pasien.
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/100/2c3e50/teacher.png" alt="Guru">
+      <h3>Guru</h3>
+      <p>Mendidik generasi muda dan mencetak masa depan yang lebih baik.</p>
+      <button onclick="toggleInfo(this)">Pelajari Lebih Lanjut</button>
+      <div class="more-info">
+        Guru adalah pendidik yang mengajarkan pengetahuan dan keterampilan kepada siswa di berbagai tingkat pendidikan. Tugas mereka meliputi menyusun rencana pelajaran, menyampaikan materi pelajaran, memberikan ujian, dan membantu perkembangan akademik dan sosial siswa. Sebagai seorang guru, Anda akan berinteraksi dengan siswa untuk mengembangkan pola pikir kritis, kreativitas, dan pemahaman mereka tentang dunia. Keterampilan komunikasi yang baik dan kesabaran sangat dibutuhkan untuk menjadi guru yang sukses. Guru juga berperan dalam membimbing siswa di luar akademik, seperti dalam membentuk karakter dan moral mereka.
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://icon-library.com/images/graphic-design-icon-png/graphic-design-icon-png-10.jpg" alt="Desainer Grafis">
+      <h3>Desainer Grafis</h3>
+      <p>Menciptakan visual menarik untuk berbagai kebutuhan media.</p>
+      <button onclick="toggleInfo(this)">Pelajari Lebih Lanjut</button>
+      <div class="more-info">
+        Desainer grafis adalah seseorang yang menggunakan perangkat lunak desain untuk membuat elemen visual yang menarik dan efektif untuk berkomunikasi dengan audiens. Pekerjaan ini mencakup pembuatan logo, brosur, poster, iklan, desain web, dan konten media sosial. Desainer grafis harus memiliki pemahaman yang kuat tentang estetika visual, warna, tipografi, dan psikologi desain. Mereka juga bekerja sama dengan tim pemasaran dan komunikasi untuk memastikan pesan yang disampaikan konsisten dan menarik. Sebagai seorang desainer, Anda akan dituntut untuk selalu mengikuti tren desain terbaru dan berinovasi dalam setiap proyek yang Anda kerjakan.
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/100/2c3e50/code.png" alt="Programmer">
+      <h3>Programmer</h3>
+      <p>Menulis kode dan membangun aplikasi untuk kebutuhan digital.</p>
+      <button onclick="toggleInfo(this)">Pelajari Lebih Lanjut</button>
+      <div class="more-info">
+        Programmer adalah seseorang yang menulis dan memelihara kode untuk membuat perangkat lunak dan aplikasi. Mereka bekerja dengan berbagai bahasa pemrograman, seperti JavaScript, Python, Java, dan C++, untuk membangun situs web, aplikasi mobile, dan perangkat lunak desktop. Selain menulis kode, mereka juga bertugas menguji dan memperbaiki bug atau kesalahan dalam sistem yang ada. Programmer bekerja dalam berbagai industri, mulai dari teknologi informasi hingga permainan video. Kemampuan analitis, keterampilan pemecahan masalah, dan kemampuan beradaptasi dengan teknologi baru adalah kunci untuk sukses dalam bidang ini.
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/100/2c3e50/video.png" alt="Content Creator">
+      <h3>Content Creator</h3>
+      <p>Membuat konten menarik di media sosial dan platform digital lainnya.</p>
+      <button onclick="toggleInfo(this)">Pelajari Lebih Lanjut</button>
+      <div class="more-info">
+        Content creator adalah individu yang menghasilkan konten kreatif di platform digital seperti YouTube, Instagram, TikTok, atau blog. Mereka membuat video, artikel, gambar, dan podcast untuk menghibur, mendidik, atau menginspirasi audiens mereka. Pembuat konten dapat bekerja di berbagai bidang seperti hiburan, edukasi, mode, kecantikan, dan teknologi. Mereka juga berinteraksi dengan audiens melalui komentar dan media sosial, membangun komunitas di sekitar karya mereka. Kreativitas, konsistensi, dan pemahaman tentang audiens adalah elemen penting dalam menjadi content creator yang sukses. Di samping itu, pemahaman tentang algoritma platform dan strategi pemasaran juga sangat membantu.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 | Website Karier Remaja
+  </footer>
+</body>
+</html>
